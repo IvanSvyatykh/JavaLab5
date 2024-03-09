@@ -1,6 +1,9 @@
 package org.example.Servlets;
 
+import org.example.Model.UserData;
+import org.example.Services.AccountService;
 import org.example.Services.FileService;
+import org.example.Services.PathUtilitie;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -15,13 +18,26 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 @WebServlet("/files")
-public class MainServlet extends HttpServlet {
+public class FileServlet extends HttpServlet {
     @Override
     public void doGet(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse)
             throws IOException, ServletException {
+
+        UserData currentUser = AccountService.getUserBySessionId(httpServletRequest.getSession().getId());
+        if (currentUser == null) {
+            String currentURL = httpServletRequest.getRequestURL().toString();
+            httpServletResponse.sendRedirect(PathUtilitie.createNewUrl(currentURL, "/login"));
+            return;
+        }
+
+        String pathToUserDir = "/home/ivan/FileContainer/" + currentUser.getLogin();
         String pathFromRequest = httpServletRequest.getParameter("path");
-        if (httpServletRequest.getParameter("path") == null) {
-            pathFromRequest = new File(".").getCanonicalPath();
+        if (httpServletRequest.getParameter("path") != null) {
+            if (!pathFromRequest.startsWith(pathToUserDir)) {
+                pathFromRequest = pathToUserDir;
+            }
+        } else {
+            pathFromRequest = pathToUserDir;
         }
 
         httpServletRequest.setAttribute("currentDir", pathFromRequest);
@@ -41,4 +57,11 @@ public class MainServlet extends HttpServlet {
         httpServletRequest.getRequestDispatcher("mypage.jsp").forward(httpServletRequest, httpServletResponse);
     }
 
+    public void doPost(HttpServletRequest httpServletRequest,
+                       HttpServletResponse httpServletResponse) throws IOException {
+        String sessionId = httpServletRequest.getSession().getId();
+        AccountService.deleteSession(sessionId);
+        String currentURL = httpServletRequest.getRequestURL().toString();
+        httpServletResponse.sendRedirect(PathUtilitie.createNewUrl(currentURL, "/login"));
+    }
 }
