@@ -40,6 +40,6 @@ public class LoginServlet extends HttpServlet {
         AccountService.addSession(httpServletRequest.getSession().getId(), data);
 
         String currentURL = httpServletRequest.getRequestURL().toString();
-        httpServletResponse.sendRedirect(PathUtilitie.createNewUrl(currentURL, "/filesr"));
+        httpServletResponse.sendRedirect(PathUtilitie.createNewUrl(currentURL, "/files"));
     }
 }

@@ -2,16 +2,28 @@
 <html>
 <head>
     <meta charset="UTF-8"/>
-    <title>L2.1</title>
+    <title>Lab5</title>
 </head>
 <body>
-<p>Регистрация нового пользователя</p>
-
-<form action="registration" method="POST">
-    Email: <input type="text" name="email"/>
-    Login: <input type="text" name="login"/>
-    Password: <input type="password" name="pass"/>
-    <input type="submit" value="Зарегистрироваться">
+<p>Регистрация</p>
+<form action="registration" method="POST" id="registr">
+    <table>
+        <tr>
+            <td>Email:</td>
+            <td><input type="text" name="email"/></td>
+        </tr>
+        <tr>
+            <td>Login:</td>
+            <td><input type="text" name="login"/></td>
+        </tr>
+        <tr>
+            <td>Password:</td>
+            <td><input type="password" name="pass"/></td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="Зарегистрироваться"></td>
+        </tr>
+    </table>
 </form>
 <a href="login">Войти, если уже зарегистрирован.</a>
 </body>

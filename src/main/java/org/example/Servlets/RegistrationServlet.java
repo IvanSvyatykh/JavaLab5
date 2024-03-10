@@ -1,10 +1,11 @@
 package org.example.Servlets;
 
-import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
-import jakarta.servlet.http.HttpServlet;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import org.example.Model.UserData;
 import org.example.Services.AccountService;
 import org.example.Services.PathUtilitie;
@@ -20,7 +21,6 @@ public class RegistrationServlet extends HttpServlet {
         httpServletRequest.getRequestDispatcher("registration.jsp").forward(httpServletRequest, httpServletResponse);
     }
 
-    //Регистрация в системе
     public void doPost(HttpServletRequest httpServletRequest,
                        HttpServletResponse httpServletResponse) throws IOException {
         String email = httpServletRequest.getParameter("email");
@@ -33,13 +33,22 @@ public class RegistrationServlet extends HttpServlet {
             return;
         }
 
-        UserData profile = new UserData(login, pass, email);
+        UserData data = new UserData(login, pass, email);
         if (AccountService.getUserByLogin(login) == null) {
-            AccountService.addNewUser(profile);
-            AccountService.addSession(httpServletRequest.getSession().getId(), profile);
+            AccountService.addNewUser(data);
+            AccountService.addSession(httpServletRequest.getSession().getId(), data);
 
-            File folder = new File("home/ivan/FileContainer/" + login);
-            boolean isCreationSuccess = folder.mkdir();
+            File folder = new File("/home/ivan/FileContainer/" + login);
+            boolean isCreationSuccess = true;
+
+            if (new File(folder.getParent()).exists()) {
+                if (!folder.exists()) {
+                    isCreationSuccess = folder.mkdir();
+                }
+            } else {
+                isCreationSuccess = folder.mkdirs();
+            }
+
 
             if (!isCreationSuccess) {
                 httpServletResponse.setContentType("text/html;charset=utf-8");

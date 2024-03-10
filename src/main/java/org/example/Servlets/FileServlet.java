@@ -62,6 +62,6 @@ public class FileServlet extends HttpServlet {
         String sessionId = httpServletRequest.getSession().getId();
         AccountService.deleteSession(sessionId);
         String currentURL = httpServletRequest.getRequestURL().toString();
-        httpServletResponse.sendRedirect(PathUtilitie.createNewUrl(currentURL, "/login"));
+        httpServletResponse.sendRedirect(PathUtilitie.createNewUrl(currentURL, "/"));
     }
 }

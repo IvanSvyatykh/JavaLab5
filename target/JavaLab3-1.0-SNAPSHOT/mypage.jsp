@@ -3,9 +3,12 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Lab3</title>
+    <title>Lab5</title>
 </head>
 <body>
+<form action="files" method="POST">
+    <input type="submit" value="Выйти" id="logoutButton">
+</form>
 <h1>Страница создана:${generationTime}</h1>
 <h2>Список файлов и папок в текущей директории: ${currentDir}</h2>
 <c:url value="files" var="upUrl">
@@ -21,6 +24,9 @@
         padding: 3px;
         border: 1px solid maroon;
         text-align: left;
+    }
+    #logoutButton {
+        float: right; /* Выравнивание кнопки вправо */
     }
 </style>
 <table>
