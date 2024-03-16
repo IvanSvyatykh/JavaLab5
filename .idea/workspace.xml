@@ -4,7 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6fb21bdc-e9fd-44e2-84dd-9b0db4af1f27" name="Changes" comment="done" />
+    <list default="true" id="6fb21bdc-e9fd-44e2-84dd-9b0db4af1f27" name="Changes" comment="done">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Services/AccountService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Services/AccountService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Servlets/FileServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Servlets/FileServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Servlets/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Servlets/LoginServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Servlets/RegistrationServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Servlets/RegistrationServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/JavaLab3-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/JavaLab3-1.0-SNAPSHOT.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/JavaLab3-1.0-SNAPSHOT/WEB-INF/classes/org/example/Services/AccountService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/JavaLab3-1.0-SNAPSHOT/WEB-INF/classes/org/example/Services/AccountService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/JavaLab3-1.0-SNAPSHOT/WEB-INF/classes/org/example/Servlets/FileServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/JavaLab3-1.0-SNAPSHOT/WEB-INF/classes/org/example/Servlets/FileServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/JavaLab3-1.0-SNAPSHOT/WEB-INF/classes/org/example/Servlets/LoginServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/JavaLab3-1.0-SNAPSHOT/WEB-INF/classes/org/example/Servlets/LoginServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/JavaLab3-1.0-SNAPSHOT/WEB-INF/classes/org/example/Servlets/RegistrationServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/JavaLab3-1.0-SNAPSHOT/WEB-INF/classes/org/example/Servlets/RegistrationServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/Services/AccountService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/Services/AccountService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/Servlets/FileServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/Servlets/FileServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/Servlets/LoginServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/Servlets/LoginServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/Servlets/RegistrationServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/Servlets/RegistrationServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-org.example.AppTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-org.example.AppTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/org.example.AppTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/org.example.AppTest.txt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -59,18 +77,6 @@
   }
 }</component>
   <component name="RunManager">
-    <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" ALTERNATIVE_JRE_ENABLED="false">
-      <deployment />
-      <server-settings />
-      <predefined_log_file enabled="true" id="Tomcat" />
-      <predefined_log_file enabled="true" id="Tomcat Catalina" />
-      <predefined_log_file id="Tomcat Manager" />
-      <predefined_log_file id="Tomcat Host Manager" />
-      <predefined_log_file id="Tomcat Localhost Access" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Tomcat 9.0.86" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.86" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
@@ -175,6 +181,8 @@
       <workItem from="1710041609077" duration="1153000" />
       <workItem from="1710044933392" duration="442000" />
       <workItem from="1710061586176" duration="11377000" />
+      <workItem from="1710318640720" duration="3000" />
+      <workItem from="1710591321247" duration="2230000" />
     </task>
     <task id="LOCAL-00001" summary="тест">
       <option name="closed" value="true" />
@@ -208,7 +216,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710082116972</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="done">
+      <option name="closed" value="true" />
+      <created>1710082176155</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1710082176156</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -36,7 +36,9 @@ public class RegistrationServlet extends HttpServlet {
         UserData data = new UserData(login, pass, email);
         if (AccountService.getUserByLogin(login) == null) {
             AccountService.addNewUser(data);
-            AccountService.addSession(httpServletRequest.getSession().getId(), data);
+
+            httpServletRequest.getSession().setAttribute("login", login);
+            httpServletRequest.getSession().setAttribute("pass", pass);
 
             File folder = new File("/home/ivan/FileContainer/" + login);
             boolean isCreationSuccess = true;

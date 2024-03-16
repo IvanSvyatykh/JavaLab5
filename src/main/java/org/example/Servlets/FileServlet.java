@@ -23,14 +23,16 @@ public class FileServlet extends HttpServlet {
     public void doGet(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse)
             throws IOException, ServletException {
 
-        UserData currentUser = AccountService.getUserBySessionId(httpServletRequest.getSession().getId());
-        if (currentUser == null) {
+        String login = (String) httpServletRequest.getSession().getAttribute("login");
+        String pass = (String) httpServletRequest.getSession().getAttribute("pass");
+
+        if (AccountService.getUserByLogin(login) == null || !AccountService.getUserByLogin(login).getPassword().equals(pass)) {
             String currentURL = httpServletRequest.getRequestURL().toString();
-            httpServletResponse.sendRedirect(PathUtilitie.createNewUrl(currentURL, "/login"));
+            httpServletResponse.sendRedirect(PathUtilitie.createNewUrl(currentURL, "/log"));
             return;
         }
 
-        String pathToUserDir = "/home/ivan/FileContainer/" + currentUser.getLogin();
+        String pathToUserDir = "/home/ivan/FileContainer/" + login;
         String pathFromRequest = httpServletRequest.getParameter("path");
         if (httpServletRequest.getParameter("path") != null) {
             if (!pathFromRequest.startsWith(pathToUserDir)) {
@@ -59,8 +61,9 @@ public class FileServlet extends HttpServlet {
 
     public void doPost(HttpServletRequest httpServletRequest,
                        HttpServletResponse httpServletResponse) throws IOException {
-        String sessionId = httpServletRequest.getSession().getId();
-        AccountService.deleteSession(sessionId);
+
+        httpServletRequest.getSession().removeAttribute("login");
+        httpServletRequest.getSession().removeAttribute("pass");
         String currentURL = httpServletRequest.getRequestURL().toString();
         httpServletResponse.sendRedirect(PathUtilitie.createNewUrl(currentURL, "/"));
     }

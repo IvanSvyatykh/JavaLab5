@@ -3,6 +3,7 @@ org/example/Model/Element.class
 org/example/Services/AccountService.class
 org/example/Servlets/FileServlet.class
 org/example/Model/FileElement.class
+org/example/Services/AccountService$1.class
 org/example/Services/FileService.class
 org/example/Servlets/LoadServlet.class
 org/example/Services/PathUtilitie.class
